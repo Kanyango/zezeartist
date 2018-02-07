@@ -11,7 +11,7 @@ export class ReleaseComponent {
   releases: Array<any> = [];
 
   constructor(private http: Http){}
-  public releaseUrl = 'http://127.0.0.1:8100/release/';
+  public releaseUrl = 'https://zezeserver.herokuapp.com/release/';
   ngOnInit(): Promise<any>
   {
     return this.http.get(this.releaseUrl)

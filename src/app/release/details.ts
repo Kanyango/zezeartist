@@ -18,9 +18,9 @@ export class DetailsComponent implements OnInit {
   assets: Array<any> = [];
   closer: false;
   opener: true;
-  public artworkUrl = 'http://127.0.0.1:8100/artwork/';
-  public assetsUrl = 'http://127.0.0.1:8100/asset/';
-  public releaseUrl = 'http://127.0.0.1:8100/release/';
+  public artworkUrl = 'https://zezeserver.herokuapp.com/artwork/';
+  public assetsUrl =  'https://zezeserver.herokuapp.com/asset/';
+  public releaseUrl = 'https://zezeserver.herokuapp.com/release/';
   constructor(private route: ActivatedRoute,
               private router: Router,
               private http: Http,

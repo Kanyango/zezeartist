@@ -64,6 +64,8 @@ export class NewReleaseComponent {
     // }
     onSubmit()
     {
+        console.log(this.releaseForm.value);
+      
         this.http.post(this.releaseUrl, this.releaseForm.value, {headers: this.headers})
                   .toPromise()
                   .then(res => { this.release = res.json(); console.log(this.release)})

@@ -12,8 +12,8 @@ export class NewReleaseComponent {
 
   releaseForm: FormGroup;
   modeOne = 'date';
-  today = 'today';
-  firstDayOfWeek = 'firstDayOfWeek';
+  //today = 'today';
+  //firstDayOfWeek = 'firstDayOfWeek';
   mode = 'year';
   release: any = {};
   public releaseUrl = 'http://127.0.0.1:8100/release/';

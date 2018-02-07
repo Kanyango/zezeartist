@@ -1,0 +1,62 @@
+<br>
+<br>
+<div class="ui grid">
+  <div class="row">
+    <div class="three wide column"></div>
+    <div class="ten wide column ui card">
+
+        <div class="content">
+          <div class="header ui left floated">Releases</div>
+
+          <a class="ui right floated large green right labeled icon button"
+            [routerLink]="['/new_release']">
+              <i class="plus icon"></i>
+              New Release
+          </a>
+        </div>
+        <ngbd-modal-basic></ngbd-modal-basic>
+        <div class="content">
+          <div class="ui middle aligned divided list">
+            <div class="item" *ngFor="let one of releases">
+              <div class="content" style="padding: 10px;">
+                <div class="header ui left floated">{{ one.title }} - {{ one.pry_artist }}</div>
+
+                    <a class="ui big blue tag label">ready</a>
+
+
+
+                <div class="ui right floated content">
+                  <a class="ui large green right labeled icon button"
+                    [routerLink]="['/details', one._id]">
+                    <i class="right arrow icon"></i>
+                    view
+                  </a>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      <div class="extra content">
+        <div class="ui pagination menu">
+          <a class="active item">
+            1
+          </a>
+          <div class="disabled item">
+            ...
+          </div>
+          <a class="item">
+            10
+          </a>
+          <a class="item">
+            11
+          </a>
+          <a class="item">
+            12
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

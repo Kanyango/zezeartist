@@ -1,18 +1,50 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { SuiModule} from 'ng2-semantic-ui';
+import { RouterModule }   from '@angular/router';
+import { HttpModule }    from '@angular/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
-
+//import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
+import { AssetsComponent } from './assets/assets';
+import { EditReleaseComponent } from './release/edit';
+import { ReactiveFormsModule } from '@angular/forms';
+import {
+    FormsModule,
+    FormGroup,
+    FormControl
+} from '@angular/forms';
+import { AppRoutingModule }   from './app-routing.module';
+import { ReleaseComponent } from './release/release';
+import { DetailsComponent } from './release/details';
+import { NavbarComponent } from './navbar/nav';
+import { NewReleaseComponent } from './release/new_release';
+import { EditAssetsComponent } from './assets/edit';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ReleaseComponent,
+    DetailsComponent,
+    NavbarComponent,
+    NewReleaseComponent,
+    //FileSelectDirective,
+    AssetsComponent,
+    EditReleaseComponent,
+    EditAssetsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    SuiModule,
+    RouterModule,
+    HttpModule,
+    FormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    NgbModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }

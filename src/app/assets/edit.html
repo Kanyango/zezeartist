@@ -1,0 +1,282 @@
+<br>
+<br>
+<div class="ui grid">
+  <div class="row">
+    <div class="one wide column"></div>
+    <div class="eight wide column">
+      <div class="ui left floated content">
+        <button class="ui massive blue labeled icon button">
+           <i class="left arrow icon"></i>
+          Back</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="ui grid">
+  <div class="two wide column"></div>
+  <div class="twelve wide column ui card">
+    <div class="content">
+      <div class="header">
+        New Asset
+      </div>
+    </div>
+    <div class="content" *ngIf="rtnd != ''">
+
+      <div class="ui warning message">
+        <i class="close icon"></i>
+        <div class="header">
+          Correct the following fields
+        </div>
+        Release date
+      </div>
+
+
+    <form class="ui equal width form"
+    [formGroup]="assetEditForm" novalidate (ngSubmit)="onSubmit()" name="assetEditForm">
+      <div class="box2" style="padding-right: 20px;">
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Track
+            </div>
+            <select class="ui fluid dropdown" formControlName="track">
+              <option>Select track</option>
+              <option *ngFor="let i of release.tracks"
+              value="{{ i.original_filename }}">
+                {{ i.original_filename}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Title
+            </div>
+            <input type="text" formControlName="title">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Version/Subtitle
+            </div>
+            <input type="text" formControlName="subtitle">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Primary Artist
+            </div>
+            <input type="text" formControlName="pry_artist">
+          </div>
+        </div>
+      <!--  <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Featuring
+            </div>
+            <input type="text" formControlName="title">
+            <button class="ui icon button" (click)="addFeat()">
+              <i class="plus icon"></i>
+            </button>
+          </div>
+        </div>
+        <div formArrayName="featuring" class="well well-lg">
+            <div *ngFor="let one of featuring.controls; let i=index" [formGroupName]="i" >
+            <div class="field">
+              <div class="ui labeled input">
+                <div class="ui label">
+                  Featuring ({{ i + 1 }})
+                </div>
+                <input type="text" formControlName="title">
+                <button class="ui icon button" (click)="remove(i)">
+                  <i class="remove icon"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <br>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Remixer
+            </div>
+            <input type="text" formControlName="remixer">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Author
+            </div>
+            <input type="text" formControlName="author">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Genre
+            </div>
+            <input type="text" formControlName="genre">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Sub Genre
+            </div>
+            <input type="text" formControlName="subgenre">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Label
+            </div>
+            <input type="text" formControlName="label">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Composer
+            </div>
+            <input type="text" formControlName="composer">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              ISRC
+            </div>
+            <input type="text" formControlName="isrc">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Format
+            </div>
+            <input type="text" formControlName="format">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Price tier
+            </div>
+            <input type="text" formControlName="p_tier">
+          </div>
+        </div>
+      </div>
+      <div class="box2">
+
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Release Date
+            </div>
+              <input suiDatepicker
+                     formControlName="release_date"
+                     [pickerMode]="modeOne"
+                     [pickerMinDate]="today"
+                     [pickerFirstDayOfWeek]="firstDayOfWeek"
+                     [pickerUseNativeOnMobile]="false">
+            </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              C line
+            </div>
+            <input type="text" formControlName="c_line">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              P Line
+            </div>
+            <input type="text" formControlName="p_line">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Production Year
+            </div>
+              <input suiDatepicker
+                     formControlName="production_yr"
+                     [pickerMode]="mode"
+                     />
+            </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              UPC/EAN
+            </div>
+            <input type="text" formControlName="upc">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Parental Advisory
+            </div>
+            <input type="text" formControlName="p_advisory">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Catalogue No
+            </div>
+            <input type="text" formControlName="catalogue_no">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+               Track Title Language
+            </div>
+            <input type="text" formControlName="track_lang">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">
+              Lyrics Language
+            </div>
+            <input type="text" formControlName="lyrics_lang">
+          </div>
+        </div>
+        <div class="field">
+          <label>Add Track Lyrics</label>
+          <textarea type="text" formControlName="track_lyrics"></textarea>
+        </div>
+        <br>
+        <br>
+
+        <div class="ui right floated content">
+          <button type="submit"
+          [disabled]="!assetEditForm.valid"
+          class="ui green huge right labeled icon button">
+            <i class="right arrow icon"></i>
+            submit asset
+          </button>
+        </div>
+      </div>
+
+
+
+    </form>
+    </div>
+  </div>
+</div>

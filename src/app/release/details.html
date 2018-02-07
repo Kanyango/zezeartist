@@ -1,0 +1,166 @@
+
+<br>
+<br>
+<div class="ui grid">
+  <div class="row">
+    <div class="two wide column"></div>
+    <div class="twelve wide column">
+      <div class="header ui left floated content">
+        <h2>{{ release.title }}</h2>
+      </div>
+            <a class="ui massive blue tag label">ready</a>
+
+
+      <div class="ui right floated large green right labeled icon button">
+          <i class="upload icon"></i>
+          Submit Release
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="two wide column"></div>
+    <div class="eight wide column ui card">
+      <div class="content">
+        <div class="ui left floated header">
+          Release Details
+        </div>
+        <a class="ui right floated large red right labeled icon button"
+          [routerLink]="['/edit/', release._id]">
+            <i class="edit icon"></i>
+            incorrect Asset details
+        </a>
+
+      </div>
+      <div class="content">
+        <div class="ui warning message">
+          <i class="close icon"></i>
+          <div class="header">
+            Correct the following fields
+          </div>
+          Song title, Upload Album artwork
+        </div>
+        <div class="ui left floated content">
+          <p style="font-size: 18px;"><strong>Primary artist:</strong> {{ release.pry_artist }}</p>
+          <p  style="font-size: 18px;"><strong>Genre:</strong> {{ release.genre }}</p>
+          <p  style="font-size: 18px;"><strong>Label:</strong> {{ release.label }}</p>
+          <p  style="font-size: 18px;"><strong>Production Year:</strong> {{ release.production_yr | date: 'yyyy' }}</p>
+        </div>
+
+        <div class="ui right floated content">
+          <p style="font-size: 18px;"><strong>Duration:</strong> 00:58:39</p>
+          <p  style="font-size: 18px;"><strong>Distribution Type:</strong> Digital</p>
+          <p  style="font-size: 18px;"><strong>Digital public price: </strong> 5.99$ / 4.99€</p>
+          <p  style="font-size: 18px;"><strong>Creation Date:</strong>	04/20/2017</p>
+          <p  style="font-size: 18px;"><strong>Release Date:</strong>	04/20/2017</p>
+        </div>
+      </div>
+    </div>
+    <div class="four wide column ">
+      <div class="ui card">
+
+
+  <div class="content">
+    <div class="header">ArtWork</div>
+  </div>
+  <div class="content">
+    <img *ngIf="release.artwork == 'undefined'" class="ui fluid image" src="assets/images/missing.png">
+    <img *ngIf="release.artwork != 'undefined'" class="ui fluid image" src="{{ release.artwork }}">
+  </div>
+  <div class="extra content">
+    <div class="form-group">
+   <input id="artwork" type="file" />
+   <button type="button" class="ui button" (click)="upload()">
+    Upload with method
+   </button>
+</div>
+  </div>
+</div>
+</div>
+  </div>
+  <div class="row">
+    <div class="two wide column"></div>
+      <div class="eight wide column ui card">
+
+          <div class="content">
+            <div class="ui left floated header">
+              Asset
+            </div>
+            <a class="ui right floated large green right labeled icon button"
+              [routerLink]="['/assets/', release._id]">
+                <i class="plus icon"></i>
+                New Asset
+            </a>
+          </div>
+          <div class="content">
+            <sui-accordion class="styled fluid" [closeOthers]="true">
+              <sui-accordion-panel [isOpen]="true" *ngFor="let one of assets">
+                <div title>
+                    <i class="dropdown icon"></i>
+                     {{ one.title }}
+                </div>
+                  <div content>
+                      <div class="box3">
+                        <p>Primary Artist : {{ one.pry_artist }}</p>
+                        <p>Genre  : {{ one.genre }}</p>
+                        <p>Label  : {{ one.label }}</p>
+                        <p>Format : {{ one.format }}</p>
+                        <p>Release Date : {{ one.release_date | date :'fullDate' }}</p>
+                        <p>Remixer :{{ one.remixer }}</p>
+                        <p>Author :{{ one.author }}</p>
+                        <p>Arranger :{{ one.arranger }}</p>
+                      </div>
+
+                      <div class="box3">
+                        <p>Subtitle : {{ one.subtitle }}</p>
+                        <p>Genre : {{ one.genre }}</p>
+                        <p>C Line : {{ one.c_line }}</p>
+                        <p>P Line : {{ one.p_line }}</p>
+                        <p>Parental Advisory : {{ one.p_advisory }}</p>
+                        <p>Track Language : {{ one.track_lang }}</p>
+                        <p>Lyrics Language : {{ one.lyrics_lang }}</p>
+                      </div>
+                      <a class="ui right floated large red right labeled icon button"
+                        [routerLink]="['/asset_edit/', one._id]">
+                          <i class="edit icon"></i>
+                          incorrect Asset details
+                      </a>
+
+
+                  </div>
+
+              </sui-accordion-panel>
+            </sui-accordion>
+          </div>
+      </div>
+      <div class="four wide column">
+            <div class="ui card">
+
+
+        <div class="content">
+          <div class="header">Release Assets</div>
+        </div>
+        <div class="content">
+          <img *ngIf="release.tracks == 'undefined'"
+          class="ui fluid image" src="assets/images/missing.png">
+          <div class="ui middle aligned divided lis">
+            <div class="item" *ngFor="let i of release.tracks">
+              <div class="content">
+                <p class="header"> {{ i.original_filename }} </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="form-group">
+         <input id="asset" type="file" />
+         <button type="button" class="ui button" (click)="upload_assets()">
+          Upload with method
+         </button>
+      </div>
+        </div>
+      </div>
+  </div>
+
+  </div>
+
+</div>

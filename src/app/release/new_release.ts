@@ -16,7 +16,7 @@ export class NewReleaseComponent {
   this_firstDayOfWeek = 'firstDayOfWeek';
   mode = 'year';
   release: any = {};
-  public releaseUrl = 'http://127.0.0.1:8100/release/';
+  public releaseUrl = 'https://zezeserver.herokuapp.com/release/';
 
   constructor(private fb: FormBuilder,private http: Http)
             {

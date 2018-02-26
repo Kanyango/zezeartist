@@ -6,7 +6,7 @@ import { NewReleaseComponent } from './release/new_release';
 import { AssetsComponent } from './assets/assets';
 import { EditReleaseComponent } from './release/edit';
 import { EditAssetsComponent } from './assets/edit';
-import { LoginComponent } from './login';
+import { LoginComponent } from './login/login';
 
 const routes: Routes = [
         //{ path: '', redirectTo: 'home', pathMatch: 'full'},

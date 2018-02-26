@@ -20,6 +20,7 @@ import { DetailsComponent } from './release/details';
 import { NavbarComponent } from './navbar/nav';
 import { NewReleaseComponent } from './release/new_release';
 import { EditAssetsComponent } from './assets/edit';
+import { LoginComponent } from './login';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { EditAssetsComponent } from './assets/edit';
     //FileSelectDirective,
     AssetsComponent,
     EditReleaseComponent,
-    EditAssetsComponent
+    EditAssetsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -20,7 +20,7 @@ import { DetailsComponent } from './release/details';
 import { NavbarComponent } from './navbar/nav';
 import { NewReleaseComponent } from './release/new_release';
 import { EditAssetsComponent } from './assets/edit';
-import { LoginComponent } from './login';
+import { LoginComponent } from './login/login';
 
 @NgModule({
   declarations: [

@@ -6,10 +6,12 @@ import { NewReleaseComponent } from './release/new_release';
 import { AssetsComponent } from './assets/assets';
 import { EditReleaseComponent } from './release/edit';
 import { EditAssetsComponent } from './assets/edit';
+import { LoginComponent } from './login';
 
 const routes: Routes = [
         //{ path: '', redirectTo: 'home', pathMatch: 'full'},
         { path: 'release', component: ReleaseComponent},
+        { path: 'login', component: LoginComponent},
         { path: 'details/:id', component: DetailsComponent},
         { path: 'new_release', component: NewReleaseComponent},
         { path: 'assets/:id', component: AssetsComponent},

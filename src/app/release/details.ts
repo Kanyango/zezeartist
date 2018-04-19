@@ -18,6 +18,8 @@ export class DetailsComponent implements OnInit {
   assets: Array<any> = [];
   closer: false;
   opener: true;
+  counter: number = 0;
+  status: string;
   public artworkUrl = 'https://zezeserver.herokuapp.com/artwork/';
   public assetsUrl =  'https://zezeserver.herokuapp.com/asset/';
   public releastatusUrl = 'https://zezeserver.herokuapp.com/releastatus/';
@@ -83,7 +85,8 @@ export class DetailsComponent implements OnInit {
                 .map((res:Response) => res.json()).subscribe(
                 //map the success function and alert the response
                  (success) => {
-                         alert(success._body);
+                          this.status = 'Complete';
+                         //alert(success._body);
                 },
                 (error) => alert(error))
           }

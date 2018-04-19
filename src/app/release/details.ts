@@ -20,7 +20,8 @@ export class DetailsComponent implements OnInit {
   opener: true;
   public artworkUrl = 'https://zezeserver.herokuapp.com/artwork/';
   public assetsUrl =  'https://zezeserver.herokuapp.com/asset/';
-  public releaseUrl = 'https://zezeserver.herokuapp.com/releastatus/';
+  public releastatusUrl = 'https://zezeserver.herokuapp.com/releastatus/';
+  public releaseUrl = 'https://zezeserver.herokuapp.com/release/';
   private headers = new Headers({'Content-Type': 'application/json'});
   
   constructor(private route: ActivatedRoute,
@@ -49,7 +50,7 @@ export class DetailsComponent implements OnInit {
   {
    
     let ready = {status: 'pending'}
-    const URL = `${this.releaseUrl}${this.id}`;
+    const URL = `${this.releastatusUrl}${this.id}`;
     return this.http.put(URL, ready, {headers: this.headers})
                     .toPromise()
                     .then(res => { this.release = res.json(); console.log(this.release)})

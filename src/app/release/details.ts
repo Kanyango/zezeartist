@@ -21,6 +21,8 @@ export class DetailsComponent implements OnInit {
   public artworkUrl = 'https://zezeserver.herokuapp.com/artwork/';
   public assetsUrl =  'https://zezeserver.herokuapp.com/asset/';
   public releaseUrl = 'https://zezeserver.herokuapp.com/release/';
+  private headers = new Headers({'Content-Type': 'application/json'});
+  
   constructor(private route: ActivatedRoute,
               private router: Router,
               private http: Http,
@@ -41,6 +43,15 @@ export class DetailsComponent implements OnInit {
     return this.http.get(URL)
                     .toPromise()
                     .then(res => { this.assets = res.json(); console.log(this.assets)})
+                    .catch(this.handleError);
+  }
+  ready()
+  {
+    let ready = {status: 'pending'}
+    const URL = `${this.releaseUrl}${this.id}`;
+    return this.http.post(URL, ready, {headers: this.headers})
+                    .toPromise()
+                    .then(res => { this.release = res.json(); console.log(this.release)})
                     .catch(this.handleError);
   }
   getRelease(id: string)

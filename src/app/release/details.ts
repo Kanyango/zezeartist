@@ -83,12 +83,12 @@ export class DetailsComponent implements OnInit {
             //append the key name 'photo' with the first file in the element
                 formData.append('asset', inputEl.files.item(0));
             //call the angular http method
-            this.counter = 50;
+            this.counter2 = 50;
             this.http.put(URL, formData)
                 .map((res:Response) => res.json()).subscribe(
                 //map the success function and alert the response
                  (success) => {
-                          this.counter = 100;
+                          this.counter2 = 100;
                          //alert(success._body);
                 },
                 (error) => alert(error))

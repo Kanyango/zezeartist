@@ -11,7 +11,8 @@
             <a class="ui massive blue tag label">ready</a>
 
 
-      <div class="ui right floated large green right labeled icon button">
+      <div class="ui right floated large green right labeled icon button" 
+    *ngIf="release.length > 0 && release.artwork != '' || release.artwork != 'undefined' || release.artwork != null">
           <i class="upload icon"></i>
           Submit Release
       </div>

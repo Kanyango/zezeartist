@@ -89,6 +89,7 @@ export class DetailsComponent implements OnInit {
                 //map the success function and alert the response
                  (success) => {
                           this.counter2 = 100;
+                          window.location.reload();
                          //alert(success._body);
                 },
                 (error) => alert(error))

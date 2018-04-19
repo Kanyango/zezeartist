@@ -23,7 +23,7 @@ export class DetailsComponent implements OnInit {
   counter2: number = 0;
   status: string;
   public artworkUrl = 'https://zezeserver.herokuapp.com/artwork/';
-  public assetsUrl =  'https://zezeserver.herokuapp.com/asset/';
+  public assetsUrl =  'https://zezeserver.herokuapp.com/assets/';
   public releastatusUrl = 'https://zezeserver.herokuapp.com/releastatus/';
   public releaseUrl = 'https://zezeserver.herokuapp.com/release/';
   private headers = new Headers({'Content-Type': 'application/json'});

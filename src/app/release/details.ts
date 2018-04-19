@@ -20,6 +20,7 @@ export class DetailsComponent implements OnInit {
   closer: false;
   opener: true;
   counter: number = 0;
+  counter2: number = 0;
   status: string;
   public artworkUrl = 'https://zezeserver.herokuapp.com/artwork/';
   public assetsUrl =  'https://zezeserver.herokuapp.com/asset/';
@@ -82,13 +83,13 @@ export class DetailsComponent implements OnInit {
             //append the key name 'photo' with the first file in the element
                 formData.append('asset', inputEl.files.item(0));
             //call the angular http method
-
+            this.counter = 50;
             this.http.put(URL, formData)
                 .map((res:Response) => res.json()).subscribe(
                 //map the success function and alert the response
                  (success) => {
-                          
-                         alert(success._body);
+                          this.counter = 100;
+                         //alert(success._body);
                 },
                 (error) => alert(error))
           }

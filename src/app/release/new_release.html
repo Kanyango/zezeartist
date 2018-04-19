@@ -2,17 +2,19 @@
 <br>
 <div class="ui grid container">
   <div class="row">
-    <div class="two wide column"></div>
-    <div class="twelve wide column ui card">
+    <div class="sixteen wide column ui card">
       <div class="content">
         <div class="header">
           New Release
         </div>
       </div>
       <div class="content">
-        <form class="ui equal width form"
-        [formGroup]="releaseForm" novalidate (ngSubmit)="onSubmit()" name="releaseForm">
-          <div class="box2" style="padding-right: 20px;">
+        <div class="ui equal width form"
+            [formGroup]="releaseForm" 
+             novalidate 
+             (ngSubmit)="onSubmit()" 
+             name="releaseForm">
+          
             <div class="field">
               <div class="ui labeled input">
                 <div class="ui label">
@@ -160,9 +162,9 @@
               </button>
             </div>
 
-          </div>
+          
 
-        </form>
+        </div>
       </div>
     </div>
   </div>

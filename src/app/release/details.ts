@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Headers, Http, Response } from '@angular/http';
+import { Location } from '@angular/common';
 import { FileUploader } from 'ng2-file-upload';
 import "rxjs/add/operator/do";
 
@@ -29,6 +30,7 @@ export class DetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private http: Http,
+              private location: Location,
               private el: ElementRef){}
 
   ngOnInit()

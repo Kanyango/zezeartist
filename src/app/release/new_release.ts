@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormBuilder, Validators, FormArray } from '@ang
 import { Feat } from './feat';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 @Component({
   selector: 'new-release-component',
@@ -19,7 +20,7 @@ export class NewReleaseComponent {
   public releaseUrl = 'https://zezeserver.herokuapp.com/release/';
   private headers = new Headers({'Content-Type': 'application/json'});
   
-  constructor(private fb: FormBuilder,private http: Http)
+  constructor(private fb: FormBuilder,private http: Http, private router: Router)
             {
                 this.createForm();
             }
@@ -68,7 +69,11 @@ export class NewReleaseComponent {
       
         this.http.post(this.releaseUrl, this.releaseForm.value, {headers: this.headers})
                   .toPromise()
-                  .then(res => { this.release = res.json(); console.log(this.release)})
+                  .then(res => {  
+                            this.release = res.json();
+                            this.router.navigate(['/release']);
+                            console.log(this.release);
+                    })
                   .catch(this.handleError);
     }
     private handleError(error: any): Promise<any>

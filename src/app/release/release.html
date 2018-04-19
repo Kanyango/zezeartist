@@ -21,8 +21,8 @@
               <div class="content" style="padding: 10px;">
                 <div class="header ui left floated">{{ one.title }} - {{ one.pry_artist }}</div>
 
-                    <a class="ui big blue tag label">ready</a>
-
+                    <a class="ui big blue tag label" *ngIf="one.status != 'incomplete'">ready</a>
+                    <a class="ui big blue tag label" *ngIf="one.status == 'incomplete'">incomplete</a>
 
 
                 <div class="ui right floated content">

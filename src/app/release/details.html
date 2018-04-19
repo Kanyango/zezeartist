@@ -13,7 +13,7 @@
 
       <div class="ui right floated large green right labeled icon button" 
            (click)="ready()"
-    *ngIf="release.length > 0 && release.artwork != '' || release.artwork != 'undefined' || release.artwork != null">
+               *ngIf="release.tracks.length > 0 && release.artwork != ''">
           <i class="upload icon"></i>
           Submit Release
       </div>

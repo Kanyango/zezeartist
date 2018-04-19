@@ -85,8 +85,8 @@ export class DetailsComponent implements OnInit {
                 .map((res:Response) => res.json()).subscribe(
                 //map the success function and alert the response
                  (success) => {
-                          this.status = 'Complete';
-                         //alert(success._body);
+                          
+                         alert(success._body);
                 },
                 (error) => alert(error))
           }
@@ -105,15 +105,24 @@ export class DetailsComponent implements OnInit {
             //append the key name 'photo' with the first file in the element
                 formData.append('photo', inputEl.files.item(0));
             //call the angular http method
-
-            this.http.put(URL, formData)
-                .map((res:Response) => res.json()).subscribe(
-                //map the success function and alert the response
-                 (success) => {
-                         alert(success._body);
-                },
-                (error) => alert(error))
-          }
+          
+            this.counter = 60;
+            //setTimeout(function(){
+                    
+                    this.http.put(URL, formData)
+                      .map((res:Response) => res.json()).subscribe(
+                      //map the success function and alert the response
+                       (success) => {
+                                 this.status = 'Complete';
+                         this.counter = 100;
+                         
+                               //alert(success._body);
+                      },
+                      (error) => alert(error))
+          
+                }
+           // }, 3000)
+            
        }
 
   private handleError(error: any): Promise<any>

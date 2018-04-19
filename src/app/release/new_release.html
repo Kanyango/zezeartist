@@ -14,7 +14,9 @@
              novalidate 
              (ngSubmit)="onSubmit()" 
              name="releaseForm">
+          
           <div class="equal width fields">
+            
             <div class="field">
               <div class="ui labeled input">
                 <div class="ui label">
@@ -23,14 +25,43 @@
                 <input type="text" formControlName="title">
               </div>
             </div>
+            
+            <div class="field">
+                <div class="ui labeled input">
+                  <div class="ui label">
+                    Format
+                  </div>
+                  <input type="text" formControlName="format">
+                </div>
+            </div>
+            
+          </div>
+          
+          <div class="equal width fields">
+            
+            <div class="field">
+                <div class="ui labeled input">
+                  <div class="ui label">
+                    Version/Subtitle
+                  </div>
+                  <input type="text" formControlName="subtitle">
+                </div>
+             </div>
+            
             <div class="field">
               <div class="ui labeled input">
                 <div class="ui label">
-                  Version/Subtitle
+                  Release Date
                 </div>
-                <input type="text" formControlName="subtitle">
-              </div>
+                  <input suiDatepicker
+                         formControlName="release_date"
+                         [pickerMode]="modeOne" />
+                </div>
             </div>
+          
+          </div>
+          <div class="equal width fields">
+            
             <div class="field">
               <div class="ui labeled input">
                 <div class="ui label">
@@ -39,7 +70,20 @@
                 <input type="text" formControlName="pry_artist">
               </div>
             </div>
-        </div>
+            
+            <div class="field">
+              <div class="ui labeled input">
+                <div class="ui label">
+                  C line
+                </div>
+                <input type="text" formControlName="c_line">
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="equal width fields">
+            
             <div class="field">
               <div class="ui labeled input">
                 <div class="ui label">
@@ -67,6 +111,20 @@
               </div>
             </div>
             
+            <div class="field">
+              <div class="ui labeled input">
+                <div class="ui label">
+                  P Line
+                </div>
+                <input type="text" formControlName="p_line">
+              </div>
+            </div>
+            
+          </div>
+            
+       
+            
+            
           <div class="equal width fields">
             
             <div class="field">
@@ -81,6 +139,22 @@
             <div class="field">
               <div class="ui labeled input">
                 <div class="ui label">
+                  Production Year
+                </div>
+                  <input suiDatepicker
+                         formControlName="production_yr"
+                         [pickerMode]="mode"
+                         />
+                </div>
+            </div>
+            
+          </div>
+            
+          <div class="equal width fields">
+            
+            <div class="field">
+              <div class="ui labeled input">
+                <div class="ui label">
                   Sub Genre
                 </div>
                 <input type="text" formControlName="subgenre">
@@ -90,79 +164,26 @@
             <div class="field">
               <div class="ui labeled input">
                 <div class="ui label">
-                  Label
-                </div>
-                <input type="text" formControlName="label">
-              </div>
-            </div>
-          
-          
-        </div>
-          
-        
-           <div class="equal width fields">
-             
-             <div class="field">
-                <div class="ui labeled input">
-                  <div class="ui label">
-                    Format
-                  </div>
-                  <input type="text" formControlName="format">
-                </div>
-            </div>
-            
-            <div class="field">
-              <div class="ui labeled input">
-                <div class="ui label">
-                  Release Date
-                </div>
-                  <input suiDatepicker
-                         formControlName="release_date"
-                         [pickerMode]="modeOne" />
-                </div>
-            </div>
-             
-            <div class="field">
-              <div class="ui labeled input">
-                <div class="ui label">
-                  C line
-                </div>
-                <input type="text" formControlName="c_line">
-              </div>
-            </div>
-             
-            <div class="field">
-              <div class="ui labeled input">
-                <div class="ui label">
-                  P Line
-                </div>
-                <input type="text" formControlName="p_line">
-              </div>
-            </div>
-            
-          </div>
-           <div class="equal width fields">
-             
-             <div class="field">
-              <div class="ui labeled input">
-                <div class="ui label">
-                  Production Year
-                </div>
-                  <input suiDatepicker
-                         formControlName="production_yr"
-                         [pickerMode]="mode"
-                         />
-                </div>
-            </div>
-             
-            <div class="field">
-              <div class="ui labeled input">
-                <div class="ui label">
                   UPC/EAN
                 </div>
                 <input type="text" formControlName="upc">
               </div>
             </div>
+            
+          </div>
+
+           <div class="equal width fields">
+             
+             
+             <div class="field">
+              <div class="ui labeled input">
+                <div class="ui label">
+                  Label
+                </div>
+                <input type="text" formControlName="label">
+              </div>
+            </div>
+            
              
             <div class="field">
               <div class="ui labeled input">
@@ -172,6 +193,10 @@
                 <input type="text" formControlName="catalogue_no">
               </div>
             </div>
+             
+          </div>
+             <br>
+             <br>
             <div class="ui right floated content">
               <button type="submit"
               [disabled]="!releaseForm.valid"

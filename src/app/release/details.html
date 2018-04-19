@@ -8,7 +8,7 @@
       <div class="header ui left floated content">
         <h2>{{ release.title }}</h2>
       </div>
-            <a class="ui massive blue tag label" *ngIf="release.tracks.length > 0 || release.artwork != ''">ready</a>
+            <a class="ui massive blue tag label" *ngIf="release.tracks.length > 0 && release.artwork != ''">ready</a>
           <a class="ui massive red tag label" *ngIf="release.tracks.length <= 0 || release.artwork == ''">errors</a>
             <button class="ui right floated large green right labeled icon button" 
                  (click)="ready()"

@@ -2,13 +2,17 @@
 <br>
 <div class="ui grid container">
   <div class="row">
+    
     <div class="sixteen wide column ui card">
+      
       <div class="content">
         <div class="header">
           New Release
         </div>
       </div>
+      
       <div class="content">
+        
         <div class="ui equal width form"
             [formGroup]="releaseForm" 
              novalidate 
@@ -60,6 +64,7 @@
             </div>
           
           </div>
+          
           <div class="equal width fields">
             
             <div class="field">
@@ -95,17 +100,24 @@
                 </button>
               </div>
             </div>
+            
             <div formArrayName="featuring" class="well well-lg">
+              
                 <div *ngFor="let one of featuring.controls; let i=index" [formGroupName]="i" >
+                  
                 <div class="field">
+                  
                   <div class="ui labeled input">
+                    
                     <div class="ui label">
                       Featuring ({{ i + 1 }})
                     </div>
+                    
                     <input type="text" formControlName="title">
                     <button class="ui icon button" (click)="remove(i)">
                       <i class="remove icon"></i>
                     </button>
+                    
                   </div>
                 </div>
               </div>
@@ -195,9 +207,12 @@
             </div>
              
           </div>
+          
              <br>
              <br>
+          
             <div class="ui right floated content">
+              
               <button type="submit"
               [disabled]="!releaseForm.valid"
               class="ui green huge right labeled icon button">
@@ -205,11 +220,12 @@
                 submit
               </button>
             </div>
+          
           </div>
 
           
 
-        </div>
+       
       </div>
     </div>
   </div>

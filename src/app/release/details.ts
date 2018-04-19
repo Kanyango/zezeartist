@@ -117,7 +117,7 @@ export class DetailsComponent implements OnInit {
                        (success) => {
                                  this.status = 'Complete';
                          this.counter = 100;
-                         this.location.reload();
+                         window.location.reload();
                                //alert(success._body);
                       },
                       (error) => alert(error))

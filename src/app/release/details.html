@@ -153,10 +153,12 @@
             </div>
           </div>
         </div>
-      <p><ngb-progressbar [showValue]="true" type="warning" [value]="counter2" [max]="100"></ngb-progressbar></p>
+      
         <div class="extra content">
           <div class="form-group">
+            
          <input id="asset" type="file" />
+         <p><ngb-progressbar [showValue]="true" type="warning" [value]="counter2" [max]="100"></ngb-progressbar></p>
          <button type="button" class="ui button" (click)="upload_assets()">
           Upload with method
          </button>

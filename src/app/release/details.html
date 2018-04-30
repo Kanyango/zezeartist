@@ -1,10 +1,10 @@
 
 <br>
 <br>
-<div class="ui grid">
+<div class="ui grid container">
   <div class="row">
-    <div class="two wide column"></div>
-    <div class="twelve wide column">
+    <!--<div class="two wide column"></div>-->
+    <div class="sixteen wide column">
       <div class="header ui left floated content">
         <h2>{{ release.title }}</h2>
       </div>
@@ -20,8 +20,8 @@
   </div>
   
   <div class="row">
-    <div class="two wide column"></div>
-    <div class="eight wide column ui card">
+    
+    <div class="ten wide column ui card">
       <div class="content">
         <div class="ui left floated header">
           Release Details
@@ -48,14 +48,14 @@
           <p  style="font-size: 18px;"><strong>Label:</strong> {{ release.label }}</p>
           <p  style="font-size: 18px;"><strong>Production Year:</strong> {{ release.production_yr | date: 'yyyy' }}</p>
         </div>
-        <div class="ui right floated content">
+        <div class="ui middle aligned content">
           <p style="font-size: 18px;"><strong>UPC :</strong> {{ release.upc }}</p>
           <p  style="font-size: 18px;"><strong>Format:</strong> {{ release.format }}</p>
           <p  style="font-size: 18px;"><strong>&#169; Line:</strong> {{ release.c_line }}</p>
           <p  style="font-size: 18px;"><strong>&#x2117; Line:</strong> {{ release.p_line  }}</p>
           <p style="font-size: 18px;"><strong>Catalogue No:</strong> {{ release.catalogue_no }}</p>
         </div>
-        <div class="ui segment"> 
+        <div class="ui right floated content"> 
           <div class="content">
             <div class="header">
               Featuring Artists

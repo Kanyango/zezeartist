@@ -47,10 +47,9 @@ export class NewReleaseComponent {
     }
     
      initVariations()
-    {
-        return this.fb.group({
-            feat : ['', Validators.required] })
-    }
+      {
+          return this.fb.group({ feat : ['', Validators.required] })
+      }
     
    
 
@@ -61,8 +60,8 @@ export class NewReleaseComponent {
     }
     remove(i)
     {
-      let featuring = <FormArray>this.releaseForm.get('featuring');
-      featuring.removeAt(i);
+       const control = <FormArray>this.releaseForm.controls['featuring'];
+       featuring.removeAt(i);
     }
     // onSubmit()
     // {

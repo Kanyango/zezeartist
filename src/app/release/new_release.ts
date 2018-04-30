@@ -65,6 +65,8 @@ export class NewReleaseComponent {
     // }
     onSubmit()
     {
+        //event.preventDefault();
+      
         console.log(this.releaseForm.value);
       
         this.http.post(this.releaseUrl, this.releaseForm.value, {headers: this.headers})

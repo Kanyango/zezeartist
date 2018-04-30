@@ -48,7 +48,7 @@
           <p  style="font-size: 18px;"><strong>Label:</strong> {{ release.label }}</p>
           <p  style="font-size: 18px;"><strong>Production Year:</strong> {{ release.production_yr | date: 'yyyy' }}</p>
         </div>
-        <div class="ui middle aligned content">
+        <div class="ui right floated content">
           <p style="font-size: 18px;"><strong>UPC :</strong> {{ release.upc }}</p>
           <p  style="font-size: 18px;"><strong>Format:</strong> {{ release.format }}</p>
           <p  style="font-size: 18px;"><strong>&#169; Line:</strong> {{ release.c_line }}</p>
@@ -66,23 +66,24 @@
         </div>-->
       </div>
       <div class="ui segment">
-        <div class="ui right aligned content"> 
+        
           <div class="content">
             <div class="header">
-              <h2>Featuring Artists</h2>
+              Featuring Artists
              </div>
           </div>
+        <hr>
           <div class="content">
             <div class="ui selection list">
               <div class="item" *ngFor="let single of release.featuring">
                 <div class="header">
-                  <h3>{{ single.feat }}</h3>
+                   {{ single.feat }}
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      
     </div>
     <div class="four wide column ">
       <div class="ui card">

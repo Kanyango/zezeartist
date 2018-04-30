@@ -51,7 +51,9 @@ export class NewReleaseComponent {
           return this.fb.group({ feat : ['', Validators.required] })
       }
     
-   
+    get featuring(): FormArray {
+          return this.releaseForm.get('featuring') as FormArray;
+        };
 
       addFeat() 
       {

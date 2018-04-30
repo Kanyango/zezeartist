@@ -108,8 +108,8 @@
             
             <div formArrayName="featuring" class="well well-lg">
               
-                <div *ngFor="let one of featuring.controls; let i=index" [formGroupName]="i" >
-                  
+                <div *ngFor="let one of releaseForm.controls.featuring.controls; let i=index"  >
+                  <div [formGroupName]="i">
                 <div class="field">
                   
                   <div class="ui labeled input">
@@ -122,7 +122,7 @@
                     <button class="ui icon button" (click)="remove(i)">
                       <i class="remove icon"></i>
                     </button>
-                    
+                  </div>
                   </div>
                 </div>
               </div>

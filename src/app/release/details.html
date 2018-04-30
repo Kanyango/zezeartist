@@ -55,6 +55,22 @@
           <p  style="font-size: 18px;"><strong>&#x2117; Line:</strong> {{ release.p_line  }}</p>
           <p style="font-size: 18px;"><strong>Catalogue No:</strong> {{ release.catalogue_no }}</p>
         </div>
+        <div class="ui segment"> 
+          <div class="content">
+            <div class="header">
+              Featuring Artists
+             </div>
+          </div>
+          <div class="content">
+            <div class="ui selection list">
+              <div class="item" *ngFor="let single of release.featuring">
+                <div class="header">
+                  {{ single.feat }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!--<div class="ui right floated content">
           <p style="font-size: 18px;"><strong>Duration:</strong> 00:58:39</p>
           <p  style="font-size: 18px;"><strong>Distribution Type:</strong> Digital</p>

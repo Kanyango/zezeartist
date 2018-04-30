@@ -26,7 +26,7 @@
                 <div class="ui label">
                   Title
                 </div>
-                <input type="text" formControlName="title" required>
+                <input type="text" formControlName="title" required name="title">
               </div>
             </div>
             
@@ -35,7 +35,7 @@
                   <div class="ui label">
                     Format
                   </div>
-                  <input type="text" formControlName="format" required>
+                  <input type="text" formControlName="format" required name="format">
                 </div>
             </div>
             
@@ -48,7 +48,7 @@
                   <div class="ui label">
                     Version/Subtitle
                   </div>
-                  <input type="text" formControlName="subtitle" required>
+                  <input type="text" formControlName="subtitle" required name="subtitle">
                 </div>
              </div>
             
@@ -59,7 +59,7 @@
                 </div>
                   <input suiDatepicker
                          formControlName="release_date"
-                         [pickerMode]="modeOne" required />
+                         [pickerMode]="modeOne" required  name="release_date">
                 </div>
             </div>
           
@@ -72,16 +72,16 @@
                 <div class="ui label">
                   Primary Artist
                 </div>
-                <input type="text" formControlName="pry_artist" required>
+                <input type="text" formControlName="pry_artist" required name="pry_artist">
               </div>
             </div>
             
             <div class="field">
               <div class="ui labeled input">
                 <div class="ui label">
-                  C line
+                  &#169; line
                 </div> 
-                <input type="text" formControlName="c_line" required>
+                <input type="text" formControlName="c_line" required name="c_line">
               </div>
             </div>
             
@@ -113,7 +113,7 @@
                       Featuring ({{ i + 1 }})
                     </div>
                     
-                    <input type="text" formControlName="title">
+                    <input type="text" formControlName="title" name="title">
                     <button class="ui icon button" (click)="remove(i)">
                       <i class="remove icon"></i>
                     </button>
@@ -126,9 +126,9 @@
             <div class="field">
               <div class="ui labeled input">
                 <div class="ui label">
-                  P Line
+                  &#x2117; line
                 </div>
-                <input type="text" formControlName="p_line" required>
+                <input type="text" formControlName="p_line" required name="p_line">
               </div>
             </div>
             
@@ -144,7 +144,7 @@
                 <div class="ui label">
                   Genre
                 </div>
-                <input type="text" formControlName="genre" required>
+                <input type="text" formControlName="genre" required name="genre">
               </div>
             </div>
             
@@ -157,7 +157,7 @@
                          formControlName="production_yr"
                          [pickerMode]="mode"
                          required
-                         />
+                         name="production_yr">
                 </div>
             </div>
             
@@ -170,7 +170,7 @@
                 <div class="ui label">
                   Sub Genre
                 </div>
-                <input type="text" formControlName="subgenre" required> 
+                <input type="text" formControlName="subgenre" required name="subgenre"> 
               </div>
             </div>
             
@@ -179,7 +179,7 @@
                 <div class="ui label">
                   UPC/EAN
                 </div>
-                <input type="text" formControlName="upc" required>
+                <input type="text" formControlName="upc" required name="upc">
               </div>
             </div>
             
@@ -193,7 +193,7 @@
                 <div class="ui label">
                   Label
                 </div>
-                <input type="text" formControlName="label" required>
+                <input type="text" formControlName="label" required name="label">
               </div>
             </div>
             
@@ -203,7 +203,7 @@
                 <div class="ui label">
                   Catalogue No
                 </div>
-                <input type="text" formControlName="catalogue_no" required>
+                <input type="text" formControlName="catalogue_no" required name="catalogue_no">
               </div>
             </div>
              

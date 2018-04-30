@@ -53,16 +53,16 @@ export class NewReleaseComponent {
     
    
 
-    addFeat() 
-    {
-        const control = <FormArray>this.releaseForm.controls['featuring'];
-        control.push(this.initVariations());
-    }
-    remove(i)
-    {
-       const control = <FormArray>this.releaseForm.controls['featuring'];
-       control.removeAt(i);
-    }
+      addFeat() 
+      {
+          const control = <FormArray>this.releaseForm.controls['featuring'];
+          control.push(this.initVariations());
+      }
+      remove(i)
+      {
+         const control = <FormArray>this.releaseForm.controls['featuring'];
+         control.removeAt(i);
+      }
     // onSubmit()
     // {
     //   console.log(this.releaseForm.value);

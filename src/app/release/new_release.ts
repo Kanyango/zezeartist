@@ -61,7 +61,7 @@ export class NewReleaseComponent {
     remove(i)
     {
        const control = <FormArray>this.releaseForm.controls['featuring'];
-       featuring.removeAt(i);
+       control.removeAt(i);
     }
     // onSubmit()
     // {

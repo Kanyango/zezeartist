@@ -9,7 +9,7 @@
         <h2>{{ release.title }}</h2>
       </div>
             <a class="ui massive blue tag label" *ngIf="release.tracks.length > 0 && release.artwork != ''">ready</a>
-          <a class="ui massive red tag label" *ngIf="release.tracks.length <= 0 || release.artwork == ''">errors</a>
+          <a class="ui massive red tag label" *ngIf="release.tracks.length <= 0 || release.artwork == ''">incomplete</a>
             <button class="ui right floated large green right labeled icon button" 
                  (click)="ready()"
                      *ngIf="release.tracks.length > 0 && release.artwork != ''">
@@ -44,10 +44,17 @@
         <div class="ui left floated content">
           <p style="font-size: 18px;"><strong>Primary artist:</strong> {{ release.pry_artist }}</p>
           <p  style="font-size: 18px;"><strong>Genre:</strong> {{ release.genre }}</p>
+          <p style="font-size: 18px;"><strong>Sub Genre:</strong> {{ release.sub_genre }}</p>
           <p  style="font-size: 18px;"><strong>Label:</strong> {{ release.label }}</p>
           <p  style="font-size: 18px;"><strong>Production Year:</strong> {{ release.production_yr | date: 'yyyy' }}</p>
         </div>
-
+        <div class="ui right floated content">
+          <p style="font-size: 18px;"><strong>UPC :</strong> {{ release.upc }}</p>
+          <p  style="font-size: 18px;"><strong>Format:</strong> {{ release.format }}</p>
+          <p  style="font-size: 18px;"><strong>&#169; Line:</strong> {{ release.c_line }}</p>
+          <p  style="font-size: 18px;"><strong>&#x2117; Line:</strong> {{ release.p_line  }}</p>
+          <p style="font-size: 18px;"><strong>Catalogue No:</strong> {{ release.catalogue_no }}</p>
+        </div>
         <!--<div class="ui right floated content">
           <p style="font-size: 18px;"><strong>Duration:</strong> 00:58:39</p>
           <p  style="font-size: 18px;"><strong>Distribution Type:</strong> Digital</p>

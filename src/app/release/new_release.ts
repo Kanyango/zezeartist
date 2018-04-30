@@ -23,6 +23,7 @@ export class NewReleaseComponent {
   constructor(private fb: FormBuilder,private http: Http, private router: Router)
             {
                 this.createForm();
+                this.initVariations();
             }
 
     createForm()
@@ -42,7 +43,7 @@ export class NewReleaseComponent {
             upc: ['', Validators.required],
             catalogue_no: ['', Validators.required],
             production_yr: ['', Validators.required],
-            featuring: this.fb.array([this.initVariations()])
+            featuring: this.fb.array([])
         })
     }
     
@@ -51,9 +52,7 @@ export class NewReleaseComponent {
           return this.fb.group({ feat : ['', Validators.required] })
       }
     
-    get featuring(): FormArray {
-          return this.releaseForm.get('featuring') as FormArray;
-        };
+    
 
       addFeat() 
       {

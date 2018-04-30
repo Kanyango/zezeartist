@@ -42,16 +42,22 @@ export class NewReleaseComponent {
             upc: ['', Validators.required],
             catalogue_no: ['', Validators.required],
             production_yr: ['', Validators.required],
-            featuring: this.fb.array([])
+            featuring: this.fb.array([this.initVariations()])
         })
     }
+    
+     initVariations()
+    {
+        return this.fb.group({
+            feat : ['', Validators.required] })
+    }
+    
+   
 
-    get featuring(): FormArray {
-      return this.releaseForm.get('featuring') as FormArray;
-    };
-
-    addFeat() {
-      this.featuring.push(this.fb.group(new Feat()));
+    addFeat() 
+    {
+        const control = <FormArray>this.releaseForm.controls['featuring'];
+        control.push(this.initVariations());
     }
     remove(i)
     {

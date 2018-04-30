@@ -1,4 +1,4 @@
 export class Feat
 {
-  title: string
+   feat: string
 }

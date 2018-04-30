@@ -23,7 +23,7 @@ export class NewReleaseComponent {
   constructor(private fb: FormBuilder,private http: Http, private router: Router)
             {
                 this.createForm();
-                this.initVariations();
+                
             }
 
     createForm()
@@ -43,7 +43,7 @@ export class NewReleaseComponent {
             upc: ['', Validators.required],
             catalogue_no: ['', Validators.required],
             production_yr: ['', Validators.required],
-            featuring: this.fb.array([])
+            featuring: this.fb.array([ this.initVariations() ])
         })
     }
     

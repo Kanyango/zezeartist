@@ -108,7 +108,7 @@
             
             <div formArrayName="featuring" class="well well-lg">
               
-                <div *ngFor="let one of featuring.controls; let i=index" [formGroupName]="i" >
+                <div *ngFor="let one of releaseForm.controls.featuring.controls; let i=index" [formGroupName]="i" >
                   
                 <div class="field">
                   

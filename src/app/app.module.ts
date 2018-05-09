@@ -52,7 +52,7 @@ import { AuthenticationService } from './helpers/auth.service';
   providers: [
         AuthGuard,
         AuthenticationService,
-    ]
+    ],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })

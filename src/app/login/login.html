@@ -38,8 +38,8 @@
   </div>
 </div> -->
 <div class="ui grid container">
-  <div dlass="four wide column"></div>
-  <div dlass="twelve wide column">
+  <div class="four wide column"></div>
+  <div class="twelve wide column">
     <div class="ui fluid grid">
       <div class="content">
         <div class="header">
@@ -47,20 +47,22 @@
         </div>
       </div>
       <div class="content">
-        <form class="ui form">
+        <form class="ui form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <div class="field">
             <div class="ui left icon input">
-              <input type="text" name="username">
+              <input type="text" formControlName="username" name="username">
               <i class="user icon"></i>
             </div>
           </div>
           <div class="field">
             <div class="ui left icon input">
-              <input type="password" name="username">
+              <input type="password" formControlName="password" name="password">
               <i class="lock icon"></i>
             </div>
           </div>
-          <button class="ui large green button">sign in</button>
+          <br>
+          <br>
+          <button type="submit" [disabled]="!loginForm.valid" class="ui fluid large green button">sign in</button>
         </form>
       </div>
     </div>

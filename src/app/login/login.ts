@@ -2,6 +2,7 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { Headers, Http } from '@angular/http';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'login-component',
@@ -9,24 +10,25 @@ import { Headers, Http } from '@angular/http';
 })
 export class LoginComponent 
 {
-  public fbUrl = 'https://zezeapp.herokuapp.com/auth/facebook/';
-    private headers = new Headers({'Content-Type': 'application/json'});
-
-    constructor(private http: Http,
-            private router: Router,
-            private route: ActivatedRoute){}
+    loginForm: FormGroup;
     
-    fbStrategy()
+    constructor(private fb: FormBuilder)
     {
-       this.http.get(this.fbUrl)
-            .toPromise()
-            .then(res => {
-                        console.log(res.json());
-                        this.router.navigate(['../release']);
-
-             })
-            .catch(this.handleError)
+        this.createForm();
+     }
+    
+    createForm()
+    {
+      this.loginForm = this.fb.group({
+        username: ['', Validators.required],
+        password : ['', Validators.required]
+      });
     }
+    
+    onSubmit()
+    {
+      
+    } 
     private handleError(error: any): Promise<any>
      {
     console.error('An error occurred', error); // for demo purposes only

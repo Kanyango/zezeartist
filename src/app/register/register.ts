@@ -28,8 +28,8 @@ export class RegisterComponent
                         firstname    : ['', Validators.required],
                         lastname     : ['', Validators.required],
                         email        : ['', Validators.required],
-                        phone   : ['', Validators.required],
-                        password: ['', Validators.required]
+                        phone        : ['', Validators.required],
+                        password     : ['', Validators.required]
                         //biz_coverage: ['', Validators.required]
                     
                     })

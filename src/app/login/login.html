@@ -40,6 +40,9 @@
 <div class="ui grid container">
   <div class="four wide column"></div>
   <div class="twelve wide column">
+    <ngb-alert type="danger" (close)="closeAlert(alert)" *ngIf="alert == true">
+                Error!! username or password incorrect
+            </ngb-alert>
     <div class="ui fluid grid">
       <div class="content">
         <div class="header">
@@ -64,6 +67,9 @@
           <br>
           <button type="submit" [disabled]="!loginForm.valid" class="ui fluid large green button">sign in</button>
         </form>
+      </div>
+      <div class="extra content">
+        <a [routerLink]="['/register']"> Do not have an account yet <strong>SIGN UP</strong> here.</a>
       </div>
     </div>
   </div>

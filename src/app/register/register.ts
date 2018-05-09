@@ -25,8 +25,9 @@ export class RegisterComponent
     {
         this.registerForm = this._fb.group(
                     {
-                        bname    : ['', Validators.required],
-                        username    : ['', Validators.required],
+                        firstname    : ['', Validators.required],
+                        lastname     : ['', Validators.required],
+                        email        : ['', Validators.required],
                         phone   : ['', Validators.required],
                         password: ['', Validators.required]
                         //biz_coverage: ['', Validators.required]

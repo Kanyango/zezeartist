@@ -21,6 +21,7 @@ import { NavbarComponent } from './navbar/nav';
 import { NewReleaseComponent } from './release/new_release';
 import { EditAssetsComponent } from './assets/edit';
 import { LoginComponent } from './login/login';
+import { RegisterComponent } from './register/register';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LoginComponent } from './login/login';
     AssetsComponent,
     EditReleaseComponent,
     EditAssetsComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

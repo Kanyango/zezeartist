@@ -48,7 +48,7 @@ export class LoginComponent
                 },
                 error => {
                    // this.alertService.error(error);
-                    /this.loading = false;
+                    //this.loading = false;
                   this.alert = true;
                 });
     }

@@ -22,6 +22,8 @@ import { NewReleaseComponent } from './release/new_release';
 import { EditAssetsComponent } from './assets/edit';
 import { LoginComponent } from './login/login';
 import { RegisterComponent } from './register/register';
+import { AuthGuard } from './guards/auth.guards';
+import { AuthenticationService } from './helpers/auth.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,10 @@ import { RegisterComponent } from './register/register';
     ReactiveFormsModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [
+        AuthGuard,
+        AuthenticationService,
+    ]
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })

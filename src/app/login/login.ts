@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { Headers, Http } from '@angular/http';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthenticationService } from '../helpers/auth.service';
 
 @Component({
   selector: 'login-component',
@@ -11,11 +12,20 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent 
 {
     loginForm: FormGroup;
-    
-    constructor(private fb: FormBuilder)
-    {
-        this.createForm();
-     }
+    model: any = {};
+  
+    constructor(private route: ActivatedRoute,
+                private router: Router,
+                private fb: FormBuilder,
+                private authenticationService: AuthenticationService)
+       {
+          this.createForm();
+       }
+  
+    ngOnInit() {
+        // reset login status
+        this.authenticationService.logout();
+    }
     
     createForm()
     {
@@ -25,10 +35,21 @@ export class LoginComponent
       });
     }
     
-    onSubmit()
-    {
+    login() {
+        //this.loading = true;
+        this.model.username = this.loginForm.value.username;
+        this.model.password = this.loginForm.value.password;
       
-    } 
+        this.authenticationService.login(this.model.username, this.model.password)
+            .subscribe(
+                data => {
+                    this.router.navigate([this.returnUrl]);
+                },
+                error => {
+                    this.alertService.error(error);
+                    this.loading = false;
+                });
+    }
     private handleError(error: any): Promise<any>
      {
     console.error('An error occurred', error); // for demo purposes only

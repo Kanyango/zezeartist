@@ -50,7 +50,7 @@
         </div>
       </div>
       <div class="content">
-        <form class="ui form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <form class="ui form" [formGroup]="loginForm" (ngSubmit)="login()">
           <div class="field">
             <div class="ui left icon input">
               <input type="text" formControlName="username" name="username">

@@ -8,6 +8,7 @@ import { EditReleaseComponent } from './release/edit';
 import { EditAssetsComponent } from './assets/edit';
 import { LoginComponent } from './login/login';
 import { AuthGuard } from './guards/auth.guards';
+import { RegisterComponent } from './register/register';
 
 const routes: Routes = [
         //{ path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -18,7 +19,7 @@ const routes: Routes = [
         { path: 'assets/:id', component: AssetsComponent, canActivate: [AuthGuard]},
         { path: 'edit/:id', component: EditReleaseComponent, canActivate: [AuthGuard]},
         { path: 'asset_edit/:id', component: EditAssetsComponent, canActivate: [AuthGuard]},
-        { path: 'login', component: LoginComponent}
+        { path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({

@@ -13,6 +13,7 @@ export class LoginComponent
 {
     loginForm: FormGroup;
     model: any = {};
+    alert = false;
   
     constructor(private route: ActivatedRoute,
                 private router: Router,
@@ -46,8 +47,9 @@ export class LoginComponent
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {
-                    this.alertService.error(error);
-                    this.loading = false;
+                   // this.alertService.error(error);
+                    /this.loading = false;
+                  this.alert = true;
                 });
     }
     private handleError(error: any): Promise<any>

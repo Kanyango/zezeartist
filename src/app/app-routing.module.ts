@@ -7,16 +7,17 @@ import { AssetsComponent } from './assets/assets';
 import { EditReleaseComponent } from './release/edit';
 import { EditAssetsComponent } from './assets/edit';
 import { LoginComponent } from './login/login';
+import { AuthGuard } from './guards/auth.guards';
 
 const routes: Routes = [
         //{ path: '', redirectTo: 'home', pathMatch: 'full'},
-        { path: 'release', component: ReleaseComponent},
+        { path: 'release', component: ReleaseComponent, canActivate: [AuthGuard]},
         { path: 'login', component: LoginComponent},
-        { path: 'details/:id', component: DetailsComponent},
+        { path: 'details/:id', component: DetailsComponent, canActivate: [AuthGuard]},
         { path: 'new_release', component: NewReleaseComponent},
-        { path: 'assets/:id', component: AssetsComponent},
-        { path: 'edit/:id', component: EditReleaseComponent},
-        { path: 'asset_edit/:id', component: EditAssetsComponent},
+        { path: 'assets/:id', component: AssetsComponent, canActivate: [AuthGuard]},
+        { path: 'edit/:id', component: EditReleaseComponent, canActivate: [AuthGuard]},
+        { path: 'asset_edit/:id', component: EditAssetsComponent, canActivate: [AuthGuard]},
         { path: 'login', component: LoginComponent}
 ];
 

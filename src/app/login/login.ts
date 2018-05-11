@@ -40,6 +40,8 @@ export class LoginComponent
         //this.loading = true;
         this.model.username = this.loginForm.value.username;
         this.model.password = this.loginForm.value.password;
+        
+        console.log('Iam model', this.model);
       
         this.authenticationService.login(this.model.username, this.model.password)
             .subscribe(

@@ -44,7 +44,7 @@ export class LoginComponent
         this.authenticationService.login(this.model.username, this.model.password)
             .subscribe(
                 data => {
-                    this.router.navigate(['/release']);
+                    this.router.navigate(['/']);
                 },
                 error => {
                    // this.alertService.error(error);

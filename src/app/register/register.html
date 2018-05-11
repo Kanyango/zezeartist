@@ -13,41 +13,37 @@
             <div class="ui fluid card">
                 <div class="content">
                     <div class="header">
-                        Sign In
+                        Sign Up
                     </div>
                 </div>
                 <div class="content">
                 <form class="ui form" novalidate [formGroup]="registerForm" (ngSubmit)="register()">
                     <div class="field">
-                        <div class="ui  labeled input">
-                            <div class="ui label">
-                                First Name
-                            </div>
+                        <div class="ui left icon input">
+                             
                             <input type="text" formControlName="firstname" name="firstname">
+                           <i class="user icon"></i>
                         </div>
                     </div>
                     <div class="field">
-                        <div class="ui  labeled input">
-                            <div class="ui label">
-                                Last Name
-                            </div>
+                        <div class="ui left icon input">
+                             
                             <input type="text" formControlName="lastname" name="lastname">
+                          <i class="user icon"></i>
                         </div>
                     </div>
                     <div class="field">
-                        <div class="ui  labeled input">
-                            <div class="ui label">
-                                Phone No.
-                            </div>
+                        <div class="ui left icon input">
+                             
                             <input type="text" formControlName="phone" name="phone">
+                            <i class="phone icon"></i>
                         </div>
                     </div>
                   <div class="field">
-                        <div class="ui  labeled input">
-                            <div class="ui label">
-                                Phone No.
-                            </div>
+                        <div class="ui left icon input">
+                            
                             <input type="text" formControlName="email" name="email">
+                           <i class="phone icon"></i>
                         </div>
                     </div>
                     <div class="field">

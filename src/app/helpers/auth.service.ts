@@ -10,15 +10,14 @@ export class AuthenticationService {
     private loginUrl = 'https://zezeafrica.herokuapp.com/login';
   
     login(username: string, password: string) {
-        return this.http.post<any>(this.loginUrl, { username: username, password: password })
+        return this.http.post(this.loginUrl, { username: username, password: password })
             .map(user => {
-                // login successful if there's a jwt token in the response
-                if (user && user.token) {
-                    // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('zezeUser', JSON.stringify(user));
-                }
- 
-                return user;
+                   let rtnd = user.json();
+                    
+                    localStorage.setItem('zezeUser', rtnd.token);
+                
+                    return user;
+
             });
     }
  

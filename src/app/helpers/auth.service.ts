@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map'
 export class AuthenticationService {
     constructor(private http: Http) { }
     
-    private loginUrl = 'https://zezeafrica.herokuapp.com/login';
+    private loginUrl = 'https://zezeserver.herokuapp.com/login';
   
     login(username: string, password: string) {
         return this.http.post(this.loginUrl, { username: username, password: password })

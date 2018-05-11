@@ -12,7 +12,7 @@ import { AuthenticationService } from '../helpers/auth.service';
 export class LoginComponent 
 {
     loginForm: FormGroup;
-    model: any = {};
+    model = {username: '', password: ''};
     alert = false;
   
     constructor(private route: ActivatedRoute,

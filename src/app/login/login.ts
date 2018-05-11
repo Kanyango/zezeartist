@@ -42,6 +42,7 @@ export class LoginComponent
         this.model.password = this.loginForm.value.password;
         
         console.log('Iam model', this.model);
+        console.log('Iam username', this.loginForm);
       
         this.authenticationService.login(this.model.username, this.model.password)
             .subscribe(
